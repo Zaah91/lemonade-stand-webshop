@@ -1,13 +1,13 @@
 // filepath: src/components/Navbar.jsx
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 function Navbar() {
   return (
     <nav style={{ padding: '10px', background: '#f4f4f4' }}>
-      <Link to="/" style={{ marginRight: '15px' }}>Home</Link>
-      <Link to="/cart" style={{ marginRight: '15px' }}>Cart</Link>
-      <Link to="/checkout">Checkout</Link>
+      <Link href="/" style={{ marginRight: '15px' }}>Home</Link>
+      <Link href="/cart" style={{ marginRight: '15px' }}>Cart</Link>
+      <Link href="/checkout">Checkout</Link>
     </nav>
   );
 }
