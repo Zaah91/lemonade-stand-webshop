@@ -1,25 +1,25 @@
-import React, { ReactNode } from 'react';
-import Navbar from './components/navbar';
-import './globals.css'; // Import global styles if needed
+"use client";
+import React from "react";
+import Navbar from "./components/navbar";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import "./globals.css";
 
-interface LayoutProps {
-  children: ReactNode;
-}
-
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        <main>{children}</main>
+        <Provider store={store}>
+          <Navbar />
+          <main>{children}</main>
+        </Provider>
       </body>
     </html>
   );
 }
 
 /*
-GitHub Copilot
-Yes, that's correct! The layout.tsx file in your Next.js project is functioning as the root layout for all pages in the app directory. It ensures that:
+The layout.tsx file in your Next.js project is functioning as the root layout for all pages in the app directory. It ensures that:
 
 The Navbar Component:
 
